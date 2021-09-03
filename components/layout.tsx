@@ -2,11 +2,15 @@ import { Box } from '@material-ui/core';
 import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head'
+import React from 'react';
 
 const name = "Carlos' Blog";
 export const siteTitle = 'Nextjs Blog';
 
-const Layout = ({ children, home }) => {
+const Layout = ({ children, home }: {
+  children: React.ReactNode
+home?: boolean
+}) => {
   return (
     <Box
       display="flex"
