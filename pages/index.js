@@ -35,6 +35,7 @@ export default function Home({ allPostData }) {
               <Date dateString={date}/>
             </Box>
           ))}
+          <p>Create New Branch to see Preview URL in Vercel</p>
         </Box>
       </Box>
     </Layout>
