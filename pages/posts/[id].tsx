@@ -23,13 +23,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-const Post = ({ postData }: 
-  {
-    postData: {
-      title: string
-      date: string
-      contentHtml: string
-    }
+const Post = ({
+  postData,
+}: {
+  postData: {
+    title: string;
+    date: string;
+    contentHtml: string;
+    id: string;
+  };
 }) => {
   return (
     <Layout>
