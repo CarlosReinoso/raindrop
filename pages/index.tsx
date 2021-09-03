@@ -43,6 +43,7 @@ export default function Home({ allPostData }: {
             </Box>
           ))}
           <p>Create New Branch to see Preview URL in Vercel</p>
+          <p>Also using TypeScript</p>
         </Box>
       </Box>
     </Layout>
