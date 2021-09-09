@@ -1,10 +1,12 @@
-import Layout, { siteTitle } from '../components/layout';
 import { Box } from '@material-ui/core';
 import Head from 'next/head';
 import Link from 'next/link';
 import { getSortedPostData } from '../lib/post';
-import Date from '../components/date'
+import Date from '../components/date';
 import { GetStaticProps } from 'next';
+import navbar from '../components/navbar';
+import Navbar from '../components/navbar';
+import Calculate from './fees/calculate';
 
 export const getStaticProps: GetStaticProps = async () => {
   const allPostData = getSortedPostData();
@@ -15,37 +17,24 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default function Home({ allPostData }: {
+export default function Home({
+  allPostData,
+}: {
   allPostData: {
-    date: string
-    title: string
-    id: string
-  }[]
+    date: string;
+    title: string;
+    id: string;
+  }[];
 }) {
   return (
-    <Layout home>
+    <>
       <Head>
-        <title>{siteTitle}</title>
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="og:title" content='Fees' />
+        <link rel="icon" href="/logo.svg" />
+        <title>Fees</title>
       </Head>
-      <Box component="section">
-        <p>Hi! Carlos here, welcome</p>
-      </Box>
-      <Box component="section">
-        <Box component="ul">
-          {allPostData.map(({ id, date, title }) => (
-            <Box component="li" key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <Date dateString={date}/>
-            </Box>
-          ))}
-          <p>Create New Branch to see Preview URL in Vercel</p>
-          <p>Also using TypeScript</p>
-        </Box>
-      </Box>
-    </Layout>
+      <Navbar />
+       <Calculate/>
+    </>
   );
 }

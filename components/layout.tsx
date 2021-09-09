@@ -1,30 +1,27 @@
 import { Box } from '@material-ui/core';
 import Image from 'next/image';
 import Link from 'next/link';
-import Head from 'next/head'
+import Head from 'next/head';
 import React from 'react';
 
-const name = "Carlos' Blog";
-export const siteTitle = 'Nextjs Blog';
+const name = 'Raindrop';
+export const siteTitle = 'Fees';
 
-const Layout = ({ children, home }: {
-  children: React.ReactNode
-home?: boolean
+const Layout = ({
+  children,
+  home,
+}: {
+  children: React.ReactNode;
+  home?: boolean;
 }) => {
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-      p="3rem"
-    >
+    <>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.svg" />
         <meta name="description" />
         <meta name="og:title" content={siteTitle} />
       </Head>
-      <Box component='header'>
+      <Box component="header">
         {home ? (
           <>
             <Image
@@ -50,21 +47,20 @@ home?: boolean
               </a>
             </Link>
             <h2>
-              <Link href="/" >
-                  <a >{name}</a>
+              <Link href="/">
+                <a>{name}</a>
               </Link>
             </h2>
           </>
         )}
       </Box>
-      <Box component='main'>
-
-      {children}
-      </Box>
+      <Box component="main">{children}</Box>
       {!home && (
-          <Link href='/'><a >← Back to home</a></Link>
+        <Link href="/">
+          <a>← Back to home</a>
+        </Link>
       )}
-    </Box>
+    </>
   );
 };
 

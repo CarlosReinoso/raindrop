@@ -34,7 +34,7 @@ const Post = ({
   };
 }) => {
   return (
-    <Layout>
+    <>
       <Head>
         <title>{postData.title}</title>
       </Head>
@@ -44,7 +44,7 @@ const Post = ({
         <Date dateString={postData.date} />
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </Box>
-    </Layout>
+    </>
   );
 };
 

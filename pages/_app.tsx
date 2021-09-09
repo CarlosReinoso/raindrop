@@ -4,6 +4,8 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../src/theme';
 import {AppProps} from 'next/app'
+import '../styles/global.css'
+
 
 export default function MyApp({ Component, pageProps }: AppProps) {
 

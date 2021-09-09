@@ -1,23 +1,47 @@
-import { createTheme } from '@material-ui/core/styles';
-import { red } from '@material-ui/core/colors';
+import { createTheme, responsiveFontSizes } from '@material-ui/core/styles';
 
-// Create a theme instance.
-const theme = createTheme({
+let theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 478,
+      md: 990
+    }
+  },
+  // typography: {
+  //   subtitle1: {
+  //     fontFamily: "'Times New Roman', 'Nunito', serif",
+  //     fontSize: "3.75rem",
+  //   },
+  // },
   palette: {
     primary: {
-      main: '#556cd6',
+      main: 'rgb(255,255,255)',
     },
-    secondary: {
-      main: '#19857b',
-    },
-    error: {
-      main: red.A400,
-    },
-    background: {
-      default: 'rgb(0,0,0,0.1)',
+    text: {
+      primary: 'rgb(20, 20, 20)',
     },
   },
+  overrides: {
+    MuiButton: {
+      contained: {
+        backgroundColor: 'rgb(174, 15, 59)',
+        color: 'white',
+        '&:hover': {
+          backgroundColor: 'rgb(174, 15, 59)',
+          filter: 'grayscale(30%)'
+        }
+      },
+      outlined: {
+        '&:hover': {
+          backgroundColor: 'rgb(245, 245, 245)',
+        }
+      },
+    }
+  }  
 });
+
+theme = responsiveFontSizes(theme)
 
 export const section = {
   paddingX: {

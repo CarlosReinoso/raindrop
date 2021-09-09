@@ -8,8 +8,17 @@ body {
   font-size: 18px;
 }
 
-* {
+/* CSS Resets */
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
 }
 
 a {
@@ -19,9 +28,4 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-img {
-  max-width: 100%;
-  display: block;
 }
