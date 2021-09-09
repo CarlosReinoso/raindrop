@@ -5,18 +5,17 @@ let theme = createTheme({
     values: {
       xs: 0,
       sm: 478,
-      md: 990
+      md: 990,
+      lg: 1280,
+      xl: 1920,
     }
   },
-  // typography: {
-  //   subtitle1: {
-  //     fontFamily: "'Times New Roman', 'Nunito', serif",
-  //     fontSize: "3.75rem",
-  //   },
-  // },
   palette: {
     primary: {
-      main: 'rgb(255,255,255)',
+      main: 'rgb(56, 152, 236)',
+    },
+    secondary: {
+      main: 'rgb(174, 15, 59)',
     },
     text: {
       primary: 'rgb(20, 20, 20)',
