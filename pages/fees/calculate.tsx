@@ -65,7 +65,7 @@ const Calculate = () => {
           At Raindrop, we understand you don't have time for complexity.
         </Typography>
         <Hidden smDown>
-          <Box position="absolute" left="-24px" bottom="-96px">
+          <Box position="absolute" left="0">
             <Image src={scribble} alt="scribble-top" />
           </Box>
         </Hidden>
@@ -84,7 +84,7 @@ const Calculate = () => {
             size="small"
           />
         </Box>
-        <Typography>Monthly fee of £{fee}</Typography>
+        <Typography variant='h5'>Monthly fee of £{fee}</Typography>
         <Box px="2rem" width="100%">
           <Grid
             container
@@ -93,6 +93,8 @@ const Calculate = () => {
               background: 'rgb(227, 246, 245)',
               borderRadius: '1rem',
               padding: '2rem 0 2rem 0',
+              marginBottom: "2rem",
+              marginTop: "2rem",
             }}
           >
             {pensionInfo.map((text) => (
@@ -116,7 +118,7 @@ const Calculate = () => {
                     style={{ gap: '1rem' }}
                   >
                     <CheckCircleIcon color="secondary" />
-                    <Typography variant="body1">{text.deposited}</Typography>
+                    <Typography variant="body2">{text.deposited}</Typography>
                   </Box>
                 </Box>
               </Grid>
@@ -133,7 +135,7 @@ const Calculate = () => {
               <Button variant="contained" style={{ maxWidth: '7rem' }}>
                 Get Started
               </Button>
-              <Typography variant="body1">
+              <Typography variant="body2">
                 <strong>
                   The value of your pension can go up as well as down. Capital
                   at risk.

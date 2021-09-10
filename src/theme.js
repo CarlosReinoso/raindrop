@@ -10,6 +10,9 @@ let theme = createTheme({
       xl: 1920,
     }
   },
+  typography: {
+    fontFamily: 'Nunito'
+  },
   palette: {
     primary: {
       main: 'rgb(56, 152, 236)',
@@ -19,6 +22,7 @@ let theme = createTheme({
     },
     text: {
       primary: 'rgb(20, 20, 20)',
+      secondary: 'rgb(174, 15, 59)',
     },
   },
   overrides: {

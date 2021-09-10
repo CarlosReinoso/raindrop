@@ -8,33 +8,27 @@ import Image from 'next/image';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 export default function Navbar() {
-  const [position, setPosition] = useState(null);
+  const [mouseHover, setPosition] = useState(null);
 
   const menuList = [
     {
       menuItem: 'home',
-      expand: false,
     },
     {
       menuItem: 'about us',
-      expand: true,
       subMenu: ['our mision', 'contact us'],
     },
     {
       menuItem: 'how it works',
-      expand: false,
     },
     {
       menuItem: 'fees',
-      expand: false,
     },
     {
       menuItem: 'funds',
-      expand: false,
     },
     {
       menuItem: 'resources',
-      expand: true,
       subMenu: ['calculator', 'glossary', 'blog', 'webinars'],
     },
   ];
@@ -43,12 +37,15 @@ export default function Navbar() {
     <>
       <Box
         position="sticky"
+        top='0'
+        bgcolor='white'
         display="flex"
         justifyContent={{ xs: 'space-between', sm: 'center' }}
         flexDirection={{ sm: 'column', md: 'row' }}
         alignItems="center"
         px={section.paddingX}
         py="2rem"
+        zIndex='1'
       >
         <Box width={120}>
           <Link href="/">
@@ -61,7 +58,7 @@ export default function Navbar() {
           <MenuIcon />
         </Hidden>
 
-        <Hidden only={['xs', 'md']}>
+        <Hidden only={['xs', 'md', 'lg', 'xl']}>
           <Box display="flex" style={{ gap: '1rem' }} py="1rem">
             <Button variant="outlined">Login</Button>
             <MenuIcon />
@@ -76,7 +73,7 @@ export default function Navbar() {
             style={{ textTransform: 'capitalize', cursor: 'pointer' }}
           >
             {menuList.map((i, index) =>
-              !i.expand ? (
+              !i.subMenu ? (
                 <Box key={index} component="li" mx="12px">
                   {i.menuItem}
                 </Box>
@@ -89,17 +86,20 @@ export default function Navbar() {
                 >
                   {i.menuItem}
                   <ExpandMoreIcon />
-                  {position && (
+                  {mouseHover && (
                     <Box
                       component="ul"
                       position="absolute"
-                      p="0.75rem"
-                      mt="1.25rem"
+                      p="1rem"
+                      pt="2.5rem"
                     >
-                      {index === position ? (
-                        <Box key={index} component="li">
-                          {menuList[position].subMenu.map((sub) => (
-                            <Box>{sub}</Box>
+                      {index === mouseHover ? (
+                        <Box key={index} component="li" bgcolor='white'>
+                          {menuList[mouseHover].subMenu.map((sub) => (
+                            <Box
+                            my='1rem'
+                            px='1rem'
+                            >{sub}</Box>
                           ))}
                         </Box>
                       ) : null}
