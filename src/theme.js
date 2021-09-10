@@ -26,12 +26,14 @@ let theme = createTheme({
       contained: {
         backgroundColor: 'rgb(174, 15, 59)',
         color: 'white',
+        textTransform: 'capitalize',
         '&:hover': {
           backgroundColor: 'rgb(174, 15, 59)',
           filter: 'grayscale(30%)'
         }
       },
       outlined: {
+        textTransform: 'capitalize',
         '&:hover': {
           backgroundColor: 'rgb(245, 245, 245)',
         }
