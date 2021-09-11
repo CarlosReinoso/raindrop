@@ -1,14 +1,18 @@
-import Footer from './footer'
-import Navbar from './navbar'
+import { Box } from '@material-ui/core';
+import Chatbot from './chatbot';
+import Footer from './footer';
+import Navbar from './navbar';
 
-const Layout = ({children}) => {
-    return (
-        <>
-         <Navbar/>
-         <main>{children}</main>   
-         <Footer/>
-        </>
-    )
-}
+const Layout = ({ children }) => {
+  return (
+    <
+    >
+      <Navbar />
+      <main>{children}</main>
+      <Footer />
+      <Chatbot />
+    </>
+  );
+};
 
-export default Layout
+export default Layout;
