@@ -1,9 +1,12 @@
-const fees = () => {
-    return (
-        <div>
-            <h1>YO</h1>
-        </div>
-    )
-}
+import Calculate from '../components/fees/calculate';
 
-export default fees
+const Fees = () => {
+  return (
+    <>
+      <Calculate />
+      {/* //TODO: TrustPilot widget (requires, API access) */}
+    </>
+  );
+};
+
+export default Fees;

@@ -8,21 +8,25 @@ import {
 } from '@material-ui/core';
 import scribble from '../../public/images/scribble-top.svg';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import axios from 'axios'
 
 const Calculate = () => {
+  const [feeInput, setFeeInput] = useState(0);
   const [fee, setFee] = useState(0);
 
-  const handleFee = (e) => {
-    const round = (total) => Math.round(total * 100) / 100;
-
-    e < 100000
-      ? setFee(round((e * 0.0075) / 12))
-      : e > 100000
-      ? setFee(round((e * 0.0056) / 12))
-      : (e = 0);
-  };
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await axios.post(`http://localhost:3000/api/calculate-fee`, {feeInput})
+        setFee(res.data.calculated)
+        console.log('res', res)
+      } catch (error) {
+        console.log('error', error)
+      }
+    })()
+  }, [feeInput])
 
   const pensionInfo = [
     {
@@ -40,6 +44,7 @@ const Calculate = () => {
   ];
   return (
     <>
+    <p>{}</p>
       <Box
         component="section"
         display="flex"
@@ -80,7 +85,7 @@ const Calculate = () => {
           <TextField
             variant="outlined"
             placeholder="Pension value"
-            onChange={(e) => handleFee(e.target.value)}
+            onChange={(e) => setFeeInput(parseInt(e.target.value))}
             color="primary"
             size="small"
           />

@@ -3,7 +3,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Date from '../../components/date';
 import Layout from '../../components/layout';
-import { getAllPostIds, getPostData } from '../../lib/post';
+import { getAllPostIds, getPostData } from '../../lib/fees';
 import { section } from '../../src/theme';
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {

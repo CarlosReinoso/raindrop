@@ -22,10 +22,15 @@ ul {
 }
 
 a {
-  color: #0070f3;
+  color: #141414;
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: none;
+  opacity: 0.5;
+}
+
+#noOpacity {
+  opacity: unset;
 }

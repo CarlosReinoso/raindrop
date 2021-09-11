@@ -48,9 +48,10 @@ export default function Navbar() {
         pt="2rem"
         zIndex="1"
       >
-        <Box width={120}>
+        <Box width={120} >
+          
           <Link href="/">
-            <a>
+            <a id='noOpacity'>
               <Image src={logo} />
             </a>
           </Link>
@@ -76,16 +77,21 @@ export default function Navbar() {
             {menuList.map((i, index) =>
               !i.subMenu ? (
                 <Box key={index} component="li" mx="12px">
-                  {i.menuItem}
+                  <Link href={i.menuItem.split(' ').join('-')}>
+                    <a>{i.menuItem}</a>
+                  </Link>
                 </Box>
               ) : (
                 <Box
                   display="flex"
                   mx="12px"
+                  style={{gap: '0.5rem'}}
                   onMouseEnter={() => setPosition(index)}
                   onMouseLeave={() => setPosition(null)}
                 >
-                  {i.menuItem}
+                  <Link href={i.menuItem.split(' ').join('-')}>
+                    <a>{i.menuItem}</a>
+                  </Link>
                   <ExpandMoreIcon />
                   {mouseHover && (
                     <Box
@@ -98,7 +104,9 @@ export default function Navbar() {
                         <Box key={index} component="li" bgcolor="white">
                           {menuList[mouseHover].subMenu.map((sub) => (
                             <Box my="1rem" px="1rem">
-                              {sub}
+                              <Link href={sub.split(' ').join('-')}>
+                                <a>{sub}</a>
+                              </Link>
                             </Box>
                           ))}
                         </Box>
