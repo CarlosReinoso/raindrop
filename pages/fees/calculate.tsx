@@ -41,11 +41,12 @@ const Calculate = () => {
   return (
     <>
       <Box
-        component="div"
+        component="section"
         display="flex"
         flexDirection="column"
         alignItems="center"
         textAlign="center"
+        mt='5rem'
         style={{ gap: '1rem' }}
       >
         <Box

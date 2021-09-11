@@ -13,13 +13,17 @@ const Footer = () => {
   return (
     <>
       <Box
+        component="footer"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        flexDirection="column"
         position="relative"
         bgcolor="#e3f6f5"
         py="3rem"
         px={{ xs: '0.5rem', sm: '1rem', md: '5rem' }}
-        overflow="hidden"
       >
-        <Grid container spacing={3}>
+        <Grid container spacing={3} style={{ maxWidth: '856px' }}>
           {footerLinks.map((column, i) => (
             <Grid item xs={12} sm={4}>
               <Typography variant="h6" color="textSecondary">
@@ -38,15 +42,14 @@ const Footer = () => {
         <Box
           display="flex"
           flexDirection={{ xs: 'column', md: 'row' }}
-          justifyContent='center'
+          justifyContent="center"
           alignItems="center"
           mt="3rem"
-
         >
           <Box style={{ filter: 'grayscale(100%)' }} mr={{ md: '2rem' }}>
             <Image src={logo} width={100} height={50} />
           </Box>
-          <Box fontSize={12} maxWidth="700px" fontWeight='500'>
+          <Box fontSize={12} maxWidth="700px" fontWeight="500">
             Raindrop ® is a trading name of Raindrop Technologies Holdings Ltd
             (FRN: 931052) an Appointed Representative of Resolution Compliance
             Ltd, which is authorised and regulated by the Financial Conduct

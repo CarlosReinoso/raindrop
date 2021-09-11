@@ -36,16 +36,17 @@ export default function Navbar() {
   return (
     <>
       <Box
+        component="nav"
         position="sticky"
-        top='0'
-        bgcolor='white'
+        top="0"
+        bgcolor="white"
         display="flex"
         justifyContent={{ xs: 'space-between', sm: 'center' }}
         flexDirection={{ sm: 'column', md: 'row' }}
         alignItems="center"
         px={section.paddingX}
-        py="2rem"
-        zIndex='1'
+        pt="2rem"
+        zIndex="1"
       >
         <Box width={120}>
           <Link href="/">
@@ -94,12 +95,11 @@ export default function Navbar() {
                       pt="2.5rem"
                     >
                       {index === mouseHover ? (
-                        <Box key={index} component="li" bgcolor='white'>
+                        <Box key={index} component="li" bgcolor="white">
                           {menuList[mouseHover].subMenu.map((sub) => (
-                            <Box
-                            my='1rem'
-                            px='1rem'
-                            >{sub}</Box>
+                            <Box my="1rem" px="1rem">
+                              {sub}
+                            </Box>
                           ))}
                         </Box>
                       ) : null}
