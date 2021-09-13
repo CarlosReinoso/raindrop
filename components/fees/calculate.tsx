@@ -16,7 +16,7 @@ const Calculate = () => {
   useEffect(() => {
     (async () => {
       try {
-        const res = await axios.post(`http://localhost:3000/api/calculate-fee`, {feeInput})
+        const res = await axios.post(`https://raindrop-beta.vercel.app/api/calculate-fee`, {feeInput})
         setFee(res.data.calculated)
       } catch (error) {
         console.log('error', error)
